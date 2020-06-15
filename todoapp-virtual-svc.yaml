@@ -16,12 +16,12 @@ spec:
     - destination:
         host: todoapp
         subset: v1
-      weight: 25
+      weight: 75
 
     - destination:
         host: todoapp
         subset: v2
-      weight: 75
+      weight: 25
 
 # kubectl get virtualservice.networking.istio.io/todoapp
 # kubectl describe virtualservice.networking.istio.io/todoapp

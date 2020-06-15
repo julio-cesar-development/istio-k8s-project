@@ -22,14 +22,18 @@ spec:
     spec:
       containers:
         - name: todoapp-container
-          image: juliocesarmidia/todo-vue:v2.0.0
+          image: juliocesarmidia/http-simple-api:v1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
+              name: todoapp-port
 
           env:
-            - name: NODE_ENV
-              value: "production"
+            - name: MESSAGE
+              value: "Version: v2"
+
+            - name: API_PORT
+              value: "80"
 
           resources:
             requests:
