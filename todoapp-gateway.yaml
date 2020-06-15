@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: todoapp-gateway
+  namespace: default
+
+spec:
+  selector:
+    istio: ingressgateway
+
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+
+# kubectl get gateway.networking.istio.io/todoapp-gateway
+# kubectl describe gateway.networking.istio.io/todoapp-gateway
