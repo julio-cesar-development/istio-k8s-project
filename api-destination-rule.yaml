@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: api-destination-rule
+  namespace: istio-project
+
+spec:
+  host: api
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+
+  - name: v2
+    labels:
+      version: v2
+
+# kubectl get destinationrule.networking.istio.io/api-destination-rule
+# kubectl describe destinationrule.networking.istio.io/api-destination-rule

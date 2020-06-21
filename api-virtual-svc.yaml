@@ -1,27 +1,27 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: todoapp
-  namespace: default
+  name: api
+  namespace: istio-project
 
 spec:
   hosts:
   - "*"
 
   gateways:
-  - todoapp-gateway
+  - api-gateway
 
   http:
   - route:
     - destination:
-        host: todoapp
+        host: api
         subset: v1
       weight: 75
 
     - destination:
-        host: todoapp
+        host: api
         subset: v2
       weight: 25
 
-# kubectl get virtualservice.networking.istio.io/todoapp
-# kubectl describe virtualservice.networking.istio.io/todoapp
+# kubectl get virtualservice.networking.istio.io/api
+# kubectl describe virtualservice.networking.istio.io/api

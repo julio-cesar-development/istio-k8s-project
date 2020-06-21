@@ -1,14 +1,14 @@
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: todoapp-hpa-v1
-  namespace: default
+  name: api-hpa-v1
+  namespace: istio-project
 
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: todoapp-deployment-v1
+    name: api-deployment-v1
 
   minReplicas: 1
   maxReplicas: 3
@@ -20,18 +20,20 @@ spec:
       target:
         type: Utilization
         averageUtilization: 50
+
 ---
+
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: todoapp-hpa-v2
-  namespace: default
+  name: api-hpa-v2
+  namespace: istio-project
 
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: todoapp-deployment-v2
+    name: api-deployment-v2
 
   minReplicas: 1
   maxReplicas: 3

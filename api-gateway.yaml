@@ -1,8 +1,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: todoapp-gateway
-  namespace: default
+  name: api-gateway
+  namespace: istio-project
 
 spec:
   selector:
@@ -16,5 +16,5 @@ spec:
     hosts:
     - "*"
 
-# kubectl get gateway.networking.istio.io/todoapp-gateway
-# kubectl describe gateway.networking.istio.io/todoapp-gateway
+# kubectl get gateway.networking.istio.io/api-gateway
+# kubectl describe gateway.networking.istio.io/api-gateway
