@@ -6,6 +6,12 @@ metadata:
 
 spec:
   host: api
+
+  trafficPolicy:
+    loadBalancer:
+      simple: LEAST_CONN
+      # RANDOM, ROUND_ROBIN
+
   subsets:
   - name: v1
     labels:

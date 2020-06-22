@@ -11,7 +11,7 @@
 > In order to run the deployments in K8S, run the script deploy.sh
 
 ```bash
-chmod +x ./deploy.sh && bash ./deploy.sh
+chmod +x ./deploy.sh && bash ./deploy.sh [canary|mirror]
 
 # to see info about K8S deployed objects
 kubectl get pod,deploy,svc,hpa,virtualservice,gateway,destinationrule -n istio-project -o wide
