@@ -23,14 +23,24 @@ kubectl get pod,deploy,svc -n istio-system -o wide
 
 > It will deploy 2 versions of the API, and Istio will make the distribution of requests based on the weight of destination rules
 
+## Mirror deploy overview
+
+> It will deploy 2 versions of the API, and Istio will mirror the requests from V1 to V2
+
 ![Architecture](https://raw.githubusercontent.com/julio-cesar-development/istio-k8s-project/master/canary-deploy.png)
 
 ## Some Istio/Envoy Docs
 
 [https://istio.io/latest/docs/reference/commands/istioctl/](https://istio.io/latest/docs/reference/commands/istioctl/)
+
 [https://istio.io/latest/docs/setup/install/istioctl/](https://istio.io/latest/docs/setup/install/istioctl/)
+
 [https://istio.io/latest/docs/reference/config/networking/destination-rule/](https://istio.io/latest/docs/reference/config/networking/destination-rule/)
+
 [https://istio.io/latest/docs/tasks/traffic-management/request-routing/](https://istio.io/latest/docs/tasks/traffic-management/request-routing/)
+
 [https://istio.io/latest/blog/2017/0.1-canary/](https://istio.io/latest/blog/2017/0.1-canary/)
+
 [https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes](https://www.digitalocean.com/community/tutorials/how-to-do-canary-deployments-with-istio-and-kubernetes)
+
 [https://www.envoyproxy.io/docs/envoy/v1.5.0/intro/arch_overview/load_balancing](https://www.envoyproxy.io/docs/envoy/v1.5.0/intro/arch_overview/load_balancing)
