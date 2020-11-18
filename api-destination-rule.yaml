@@ -8,9 +8,13 @@ spec:
   host: api
 
   trafficPolicy:
+    # loadBalancer:
+    #   simple: LEAST_CONN
+    #   RANDOM, ROUND_ROBIN, LEAST_CONN
+
     loadBalancer:
-      simple: LEAST_CONN
-      # RANDOM, ROUND_ROBIN
+      consistentHash:
+        useSourceIp: true
 
   subsets:
   - name: v1

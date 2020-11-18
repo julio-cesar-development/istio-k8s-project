@@ -16,12 +16,12 @@ spec:
     - destination:
         host: api
         subset: v1
-      weight: 75
+      weight: 50
 
     - destination:
         host: api
         subset: v2
-      weight: 25
+      weight: 50
 
 # kubectl get virtualservice.networking.istio.io/api
 # kubectl describe virtualservice.networking.istio.io/api

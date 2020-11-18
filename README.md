@@ -14,7 +14,10 @@
 chmod +x ./deploy.sh && bash ./deploy.sh [canary|mirror]
 
 # to see info about K8S deployed objects
-kubectl get pod,deploy,svc,hpa,virtualservice,gateway,destinationrule -n istio-project -o wide
+kubectl get pod,deploy,svc,hpa -n istio-project -o wide
+
+kubectl get virtualservice,gateway,destinationrule -n istio-project -o wide
+
 
 kubectl get pod,deploy,svc -n istio-system -o wide
 ```
